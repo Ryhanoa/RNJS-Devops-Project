@@ -72,10 +72,10 @@ public class AddMovieServlet extends HttpServlet {
 			// prepared statement accordingly
 			ps.setString(1, movieName);
 			ps.setString(2, movieImage);
-			ps.setString(3, trailer);
+			ps.setString(3, genre);
 			ps.setString(4, description);
-			ps.setString(5, genre);
-			ps.setString(6, ageRating);
+			ps.setString(5, ageRating);
+			ps.setString(6, trailer);
 
 			// Step 6: perform the query on the database using the prepared statement
 			int i = ps.executeUpdate();
