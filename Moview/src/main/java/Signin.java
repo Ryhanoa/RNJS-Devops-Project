@@ -55,7 +55,7 @@ public class Signin extends HttpServlet {
 		try {
 		 Class.forName("com.mysql.jdbc.Driver");
 		 Connection con = DriverManager.getConnection(
-		 "jdbc:mysql://localhost:3306/account", "root", "password");
+		 "jdbc:mysql://localhost:3306/moview", "root", "password");
 		
 		 //Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
 		 PreparedStatement ps = con.prepareStatement("select * from account.account where username = ? AND password = ?");
