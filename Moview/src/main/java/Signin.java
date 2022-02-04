@@ -58,7 +58,7 @@ public class Signin extends HttpServlet {
 		 "jdbc:mysql://localhost:3306/moview", "root", "password");
 		
 		 //Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
-		 PreparedStatement ps = con.prepareStatement("select * from account.account where username = ? AND password = ?");
+		 PreparedStatement ps = con.prepareStatement("select * from moview.account where username = ? AND password = ?");
 		
 		 //Step 5: parse in the data retrieved from the web form request into the prepared statement accordingly
 		 ps.setString(1, username);

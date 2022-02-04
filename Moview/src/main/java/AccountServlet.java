@@ -28,11 +28,11 @@ public class AccountServlet extends HttpServlet {
 	 
 	 
 	 //Step 2: Prepare list of SQL prepared statements to perform CRUD to our database
-	 private static final String INSERT_USERS_SQL = "INSERT INTO account.account" + " (username, password, email, contact, address) VALUES " + " (?, ?, ?, ?, ?);";
-	 private static final String SELECT_USER_BY_ID = "select * from account.account where username = ? AND password = ?";
-	 private static final String SELECT_ALL_USERS = "select * from account.account";
-	 private static final String DELETE_USERS_SQL = "delete from account.account where username = ?;";
-	 private static final String UPDATE_USERS_SQL = "update account.account set username = ?,password= ?, email =?,contact =?, address = ? where username = ?;";
+	 private static final String INSERT_USERS_SQL = "INSERT INTO moview.account" + " (username, password, email, contact, address) VALUES " + " (?, ?, ?, ?, ?);";
+	 private static final String SELECT_USER_BY_ID = "select * from moview.account where username = ? AND password = ?";
+	 private static final String SELECT_ALL_USERS = "select * from moview.account";
+	 private static final String DELETE_USERS_SQL = "delete from moview.account where username = ?;";
+	 private static final String UPDATE_USERS_SQL = "update moview.account set username = ?,password= ?, email =?,contact =?, address = ? where username = ?;";
 	 
 	 
 	 //Step 3: Implement the getConnection method which facilitates connection to the database via JDBC
