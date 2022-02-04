@@ -60,7 +60,7 @@ public class Signup extends HttpServlet {
 		 "jdbc:mysql://localhost:3306/moview", "root", "password");
 		
 		 //Step 4: implement the sql query using prepared statement (https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html)
-		 PreparedStatement ps = con.prepareStatement("insert into account.account values(?,?,?,?,?)");
+		 PreparedStatement ps = con.prepareStatement("insert into moview.account values(?,?,?,?,?)");
 		
 		 //Step 5: parse in the data retrieved from the web form request into the prepared statement accordingly
 		 ps.setString(1, username);
@@ -70,7 +70,7 @@ public class Signup extends HttpServlet {
 		 ps.setString(5, address);
 		
 		 
-		 PreparedStatement check = con.prepareStatement("select * from account.account where username = ? OR email = ?");
+		 PreparedStatement check = con.prepareStatement("select * from moview.account where username = ? OR email = ?");
 		 check.setString(1, username);
 		 check.setString(2, email);
 		 rs = check.executeQuery();
