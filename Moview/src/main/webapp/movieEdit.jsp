@@ -13,15 +13,11 @@
 <title>Edit Movie</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-light">
-<div>
-<a class="navbar-brand"> Edit Movie </a>
-</div>
-<ul class="navbar-nav">
-<li><a href="<%=request.getContextPath()%>/MovieServlet/dashboard"
-class="nav-link">Back to Dashboard</a></li>
-</ul>
-</nav>
+
+<a href="<%=request.getContextPath()%>/MovieServlet/dashboard"
+class="btn btn-success" style = "position:relative; left:50px; top:40px">Back to Dashboard</a>
+
+
 <div class="container col-md-6">
 <div class="card">
 <div class="card-body">

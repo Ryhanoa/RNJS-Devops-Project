@@ -14,7 +14,7 @@ crossorigin="anonymous">
 <body>
 <div class="row">
 <div class="container">
-<h3 class="text-center">All Movies</h3>
+<h1 style="font-weight: 700;" class="text-center">All Movies</h1>
 <hr>
 <div class="container text-left">
 <!-- Add new movie button redirects to the addMovie.jsp page -->
