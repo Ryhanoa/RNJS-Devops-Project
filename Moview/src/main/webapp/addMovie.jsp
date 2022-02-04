@@ -10,18 +10,45 @@
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 crossorigin="anonymous">
+
+<style type="text/css">
+	input {
+		width: 400px; 
+		height: 45px; 
+		border-radius: 10px; 
+		border: 1px black solid; 
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+	.submitBtn {
+		background-color: white;
+	}
+	.submitBtn:hover {
+		background-color: #BDBDBD;
+	}
+</style>
 </head>
-<a href="<%=request.getContextPath()%>/MovieServlet/dashboard" class="btn btn-success" style = "position:relative; left:5px; top:2px" >Movie Management</a>
 <body>
-	<h1>Add Movies!</h1>
-	<form action="AddMovieServlet" method="post">
-		Movie Name: <input type="text"name="movieName">
-		Movie poster: <input type="text" name="movieImage"> 
-		Genre: <input type="text" name="genre">
-		Description: <input type="text" name="description">		
-		Age Rating: <input type="text" name="ageRating">		
-		Trailer: <input type="text" name="trailer"> 		
-		<input type="submit" value="Submit" />
-	</form>
+	<a href="<%=request.getContextPath()%>/MovieServlet/dashboard" class="btn btn-success" style = "position:relative; left:50px; top:40px" >Back to Dashboard</a>
+	<div style="display:flex; flex-direction: column; align-items: center;">
+		<h1 style="font-weight: 700; margin-bottom: 50px;">Add Movies!</h1>
+		<div>
+			<form action="AddMovieServlet" method="post">
+				<input type="text"name="movieName" placeholder="Movie Name">
+				<br>
+				<input type="text" name="movieImage" placeholder="Movie Poster"> 
+				<br>
+				<input type="text" name="genre" placeholder="Genre">
+				<br>
+				<input type="text" name="description" placeholder="Description">		
+				<br>
+				<input type="text" name="ageRating" placeholder="Age Rating">		
+				<br>
+				<input type="text" name="trailer" placeholder="Trailer"> 		
+				<br>
+				<input class="submitBtn" type="submit" value="Submit" />
+			</form>
+		</div>
+	</div>
 </body>
 </html>
