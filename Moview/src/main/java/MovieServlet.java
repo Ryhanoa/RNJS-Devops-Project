@@ -127,14 +127,7 @@ public class MovieServlet extends HttpServlet {
 				String ageRating = rs.getString("ageRating");
 				String trailer = rs.getString("trailer");
 				movies.add(new Movie(id, movieName, movieImage, genre, description, ageRating, trailer));
-//				
-//				System.out.println("This is the id" + id);
-//				System.out.println("This is the movie name" + movieName);
-//				System.out.println("This is the poster" + movieImage);
-//				System.out.println("This is the genre" + genre);
-//				System.out.println("This is the description" + description);
-//				System.out.println("This is the ageRating" + ageRating);
-//				System.out.println("This is the trailer" + trailer);
+
 				
 			}
 		} catch (SQLException e) {

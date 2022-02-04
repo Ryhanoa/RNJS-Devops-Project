@@ -6,18 +6,24 @@ public class Movie {
 	protected String movieName;
 
 	protected String movieImage;
+	
+	protected String genre; 
+
+	protected String description;
+
+	protected String ageRating;
 
 	protected String trailer;
 	
-	public Movie (String id, String movieName, String movieImage, String trailer, String description, String genre, String ageRating) {
+	public Movie (String id, String movieName, String movieImage, String genre, String description, String ageRating, String trailer) {
 		super(); 
 		this.id = id;
 		this.movieName = movieName;
 		this.movieImage = movieImage;
-		this.trailer = trailer;
-		this.description = description;
 		this.genre = genre;
+		this.description = description;
 		this.ageRating = ageRating;
+		this.trailer = trailer;
 	}
 
 	public String getId() {
@@ -76,11 +82,6 @@ public class Movie {
 		this.ageRating = ageRating;
 	}
 
-	protected String description;
-
-	protected String genre; 
-
-	protected String ageRating;
 	
 
 }
