@@ -12,6 +12,18 @@
 	crossorigin="anonymous">
 </head>
 <body>
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div>
+			<a class="navbar-brand"> Moview </a>
+		</div>
+		<ul class="navbar-nav">
+			<li>
+			<a href="<%=request.getContextPath()%>/Signin.jsp"
+				class="nav-link">Log Out</a></li>
+		</ul>
+	</nav>
+	
+<hr>
 	<div class="row">
 		<div class="container">
 			<h3 class="text-center">Account Settings</h3>
@@ -22,7 +34,7 @@
 					<c:forEach var="accounts" items="${listUsers}">
 						<tr>
 							<th>Name:</th>
-							<td><c:out value="${accounts.username}" /></td>
+							<td><c:out value="${accounts.username}"/></td>
 						</tr>
 						<th>Password:</th>
 						<td><c:out value="${accounts.password}" /></td>

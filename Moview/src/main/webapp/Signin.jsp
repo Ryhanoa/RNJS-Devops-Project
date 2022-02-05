@@ -12,7 +12,22 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<h1>Register</h1>
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div>
+			<a class="navbar-brand"> Moview </a>
+		</div>
+		<ul class="navbar-nav">
+			<li>
+			<a href="<%=request.getContextPath()%>/Signin.jsp"
+				class="nav-link">Log In</a></li>
+							<li>
+			<a href="<%=request.getContextPath()%>/Register.jsp"
+				class="nav-link">Sign Up</a></li>
+		</ul>
+	</nav>
+
+<hr>
+	<h1>Log In</h1>
 	<form action="Signin" method="post">
 		Username: <input type="text" name="username"> 
 		Password: <input type="password" name="password"> 

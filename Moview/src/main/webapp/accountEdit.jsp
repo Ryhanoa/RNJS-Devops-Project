@@ -18,8 +18,9 @@ crossorigin="anonymous">
 		</div>
 		<ul class="navbar-nav">
 			<li><a
-				href="<%=request.getContextPath()%>/UserServlet/dashboard"
-				class="nav-link">Back to Dashboard</a></li>
+				href="<%=request.getContextPath()%>/AccountServlet/dashboard?username=<c:out value="${accounts.username}" />&password=
+				<c:out value="${accounts.password}" />"
+				class="nav-link">Back to Account Setting</a></li>
 		</ul>
 	</nav>
 	<div class="container col-md-6">
@@ -54,7 +55,7 @@ crossorigin="anonymous">
 					<label>User Email</label> <input type="text" value="<c:out value='${accounts.email}' />" class="form-control" name="email">
 				</fieldset>
 				<fieldset class="form-group">
-					<label> contact</label> <input type="text" value="<c:out value='${accounts.contact}' />" class="form-control" name="contact">
+					<label> contact</label> <input type="tel" pattern="[0-9]{8}" minlength="8" maxlength="8" value="<c:out value='${accounts.contact}' />" class="form-control" name="contact">
 				</fieldset>
 				<fieldset class="form-group">
 					<label> address</label> <input type="text" value="<c:out value='${accounts.address}' />" class="form-control" name="address">
