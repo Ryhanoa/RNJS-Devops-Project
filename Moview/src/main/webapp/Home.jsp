@@ -3,80 +3,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Home</title>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-crossorigin="anonymous">
+	<meta charset="ISO-8859-1">
+	<title>Home</title>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	
+	<style>
+		.cardTopDiv{
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 10px;
+		}
+		
+		.cardLeftDiv {
+			display: flex;
+			flex-direction: column;
+			margin-right: 40px;
+		}
+		
+		.cardRightDiv{
+			display: flex;
+			flex-direction: column;
+			margin-right: 50px;
+		}
+		
+		.topNavBar {
+			display: flex;
+			flex-direction: row;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			padding-left: 50px;
+			border-bottom: 1px black solid
+		}
+		
+		.navHeader {
+			font-size: 28px;
+			margin-left: 50px;
+			color: black;
+		}
+		
+	
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-light">
-		<div>
-			<a class="navbar-brand"> Moview </a>
-		</div>
-		<ul class="navbar-nav">
-			<li><a
+	<div class="topNavBar">
+			<h2 style="cursor:default; font-weight: 700;">MOVIEW</h2>
+			<a
 				href="<%=request.getContextPath()%>/AccountServlet/dashboard?username=<c:out value="${username}" />&password=
 				<c:out value="${password}" />"
-				class="nav-link">Account information</a></li>
-							<li>
+				class="navHeader">PROFILE</a>
 			<a href="<%=request.getContextPath()%>/Signin.jsp"
-				class="nav-link">Log Out</a></li>
-		</ul>
-	</nav>
+				class="navHeader">LOG OUT</a>
+	</div>
 
 <div class="row">
 <div class="container">
-<h3 class="text-center">All Movies</h3>
+<h1 style="font-weight:700; margin-top: 30px" class="text-center">All Movies</h1>
 <hr>
-<br>
-<!-- Create a table to list out all current movies information -->
-<table class="table">
-<thead>
-<tr>
-<th>Movie Name</th>
-<th>Movie Image</th>
-<th>Genre</th>
-<th>Description</th>
-<th>Age Rating</th>
-<th>Trailer</th>
-</tr>
-</thead>
-<!-- Pass in the list of movies receive via the Servlet’s response to a loop
--->
-<tbody>
-<c:forEach var="movie" items="${listHomeMovies}">
-<!-- For each movie in the database, display their
-information accordingly -->
-<tr>
-<td>
-<c:out value="${movie.movieName}" />
-</td>
-<td>
-<img  height="100px" width="200px" src="<c:out value="${movie.movieImage}"/>"/>
-</td>
-<td>
-<c:out value="${movie.genre}" />
-</td>
-<td>
-<c:out value="${movie.description}" />
-</td>
-<td>
-<c:out value="${movie.ageRating}" />
-</td>
-<td>
-<c:out value="${movie.trailer}" />
-</td>
-<!-- For each movie in the database, Edit/Delete
-buttons which invokes the edit/delete functions -->
-<td>
-</td>
-</tr>
-</c:forEach>
-</tbody>
-</table>
+<div style="margin-top:30px; font-size: 20px;">
+	<c:forEach var="movie" items="${listHomeMovies}">
+		<div style="display:flex; align-items:center; margin-bottom: 35px; ">
+			<img style="margin-right: 70px;"  height="175px" width="300px" src="<c:out value="${movie.movieImage}"/>"/>
+			<div class="movieCards">
+				<div class="cardTopDiv">		
+					<div class="cardLeftDiv">
+						<div>
+							<b>Movie Name: </b><c:out value="${movie.movieName}" />
+						</div>
+						
+						<div>
+							<b>Genre: </b><c:out value="${movie.genre}" />
+						</div>
+					</div>
+					
+					<div class="cardRightDiv">
+						<div>
+							<b>Age Rating: </b><c:out value="${movie.ageRating}" />
+						</div>
+						<div>
+							<b>Trailer: </b><a target="_blank" href="
+							<c:out value="${movie.trailer}"/>"><c:out value="${movie.trailer}"/></a>
+						</div>
+					</div>
+				</div>
+				
+				<div style="margin-bottom: 10px; width: 850px;">
+					<b>Description: </b><c:out value="${movie.description}" />
+				</div>			
+			</div>
+		</div>
+	</c:forEach>
+</div>
 </div>
 </div>
 </body>

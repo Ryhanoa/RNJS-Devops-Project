@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Movie Management</title>
+	<title>Moview Management</title>
 	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -35,33 +35,43 @@
 		flex-direction: row;
 	}
 	
+	.topNavBar {
+		display: flex;
+		flex-direction: row;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 50px;
+		border-bottom: 1px black solid
+	}
+	
+	.navHeader {
+		font-size: 28px;
+		margin-left: 50px;
+		color: black;
+	}
+	
 	</style>
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-md navbar-light">
-		<div>
-			<a class="navbar-brand"> Moview </a>
-		</div>
-		<ul class="navbar-nav">
-			<li><a
+	<div class="topNavBar">
+			<h2 style="cursor:default; font-weight: 700;">MOVIEW</h2>
+			<a
 				href="<%=request.getContextPath()%>/AccountServlet/dashboard?username=<c:out value="${username}" />&password=
 				<c:out value="${password}" />"
-				class="nav-link">Account information</a></li>
-							<li>
+				class="navHeader">PROFILE</a>
 			<a href="<%=request.getContextPath()%>/Signin.jsp"
-				class="nav-link">Log Out</a></li>
-		</ul>
-	</nav>
+				class="navHeader">LOG OUT</a>
+	</div>
 
 <div class="row">
 <div class="container">
-<h1 style="font-weight: 700;" class="text-center">All Movies</h1>
+<h1 style="font-weight: 700; margin-top: 30px;" class="text-center">All Movies</h1>
 <hr>
 <div class="container text-left">
 <!-- Add new movie button redirects to the addMovie.jsp page -->
 <a href="<%=request.getContextPath()%>/addMovie.jsp" class="btn btn-success">Add New Movie</a>
-
+<hr>
 </div>
 
 

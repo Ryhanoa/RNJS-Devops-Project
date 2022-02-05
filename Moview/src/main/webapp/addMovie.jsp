@@ -22,9 +22,13 @@ crossorigin="anonymous">
 	}
 	.submitBtn {
 		background-color: white;
+		border: 2px #080A6E solid;
+		color: #080A6E;
+		padding: 5px;
 	}
 	.submitBtn:hover {
-		background-color: #BDBDBD;
+		background-color: #080A6E;
+		color: white;
 	}
 </style>
 </head>
