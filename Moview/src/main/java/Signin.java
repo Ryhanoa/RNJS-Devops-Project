@@ -49,6 +49,7 @@ public class Signin extends HttpServlet {
 		//Step 2: retrieve the four parameters from the request from the web form
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		String adminCode = request.getParameter("adminCode");
 		ResultSet rs = null;
 		
 		//Step 3: attempt connection to database using JDBC, you can change the username and password accordingly using the phpMyAdmin > User Account dashboard
@@ -67,10 +68,20 @@ public class Signin extends HttpServlet {
 		 rs = ps.executeQuery();
 		 
 		 if(rs.next()) {
-			 request.setAttribute("username", username);
-			 request.setAttribute("password", password);
-			 RequestDispatcher rd = request.getRequestDispatcher("/AccountServlet/dashboard");
-			 rd.forward(request,response);
+			 
+			 if (adminCode == "123") {
+				 request.setAttribute("username", username);
+				 request.setAttribute("password", password);
+				 RequestDispatcher rd = request.getRequestDispatcher("/MovieServlet/dashboard");
+				 rd.forward(request,response);
+			 }
+			 else {
+				 request.setAttribute("username", username);
+				 request.setAttribute("password", password);
+				 RequestDispatcher rd = request.getRequestDispatcher("/HomeServlet");
+				 rd.forward(request,response);
+			 }
+
 			 
 		 }
 		 else {

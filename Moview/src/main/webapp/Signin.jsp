@@ -31,6 +31,7 @@
 	<form action="Signin" method="post">
 		Username: <input type="text" name="username"> 
 		Password: <input type="password" name="password"> 
+		Admin Code: <input type="password" name="adminCode">
 		<input type="submit" value="Log in" />
 	</form>
 </body>
