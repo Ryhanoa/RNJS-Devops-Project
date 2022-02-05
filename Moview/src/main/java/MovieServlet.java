@@ -109,7 +109,10 @@ public class MovieServlet extends HttpServlet {
 	// records
 	private void listMovies(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		
+		String usernameCall = (String)request.getAttribute("username");
+		String passwordCall = (String)request.getAttribute("password");
+		String usernameGetParam = request.getParameter("username");
+		String passwordGetParam = request.getParameter("password");
 		List<Movie> movies = new ArrayList<>();
 		try (Connection connection = getConnection();
 
@@ -135,9 +138,19 @@ public class MovieServlet extends HttpServlet {
 		}
 		// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 		// movieManagement.jsp
-		request.setAttribute("listMovies", movies);
-		System.out.println(movies);
-		request.getRequestDispatcher("/movieManagement.jsp").forward(request, response);
+		if( usernameGetParam != null && passwordGetParam != null) {
+			request.setAttribute("username", usernameGetParam);
+			request.setAttribute("password", passwordGetParam);
+			request.setAttribute("listHomeMovies", movies);
+			request.getRequestDispatcher("/movieManagement.jsp").forward(request, response);
+
+		}
+		else {
+			request.setAttribute("username", usernameCall);
+			request.setAttribute("password", passwordCall);
+			request.setAttribute("listHomeMovies", movies);
+			request.getRequestDispatcher("/movieManagement.jsp").forward(request, response);
+		}
 	}
 
 	// method to get parameter, query database for existing movie data and redirect
