@@ -3,13 +3,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Movie Management</title>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<link rel="stylesheet"
-href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-crossorigin="anonymous">
+	<meta charset="ISO-8859-1">
+	<title>Movie Management</title>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+	
+	<style>
+	.cardTopDiv{
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+	
+	.cardLeftDiv {
+		display: flex;
+		flex-direction: column;
+		margin-right: 40px;
+	}
+	
+	.cardRightDiv{
+		display: flex;
+		flex-direction: column;
+		margin-right: 50px;
+	}
+	
+	.cardBtmDiv {
+		display: flex;
+		flex-direction: row;
+	}
+	
+	</style>
 </head>
 <body>
 <div class="row">
@@ -19,57 +45,56 @@ crossorigin="anonymous">
 <div class="container text-left">
 <!-- Add new movie button redirects to the addMovie.jsp page -->
 <a href="<%=request.getContextPath()%>/addMovie.jsp" class="btn btn-success">Add New Movie</a>
+
 </div>
-<br>
-<!-- Create a table to list out all current movies information -->
-<table class="table">
-<thead>
-<tr>
-<th>Movie Name</th>
-<th>Movie Image</th>
-<th>Genre</th>
-<th>Description</th>
-<th>Age Rating</th>
-<th>Trailer</th>
-</tr>
-</thead>
-<!-- Pass in the list of movies receive via the Servlet’s response to a loop
--->
-<tbody>
-<c:forEach var="movie" items="${listMovies}">
-<!-- For each movie in the database, display their
-information accordingly -->
-<tr>
-<td>
-<c:out value="${movie.movieName}" />
-</td>
-<td>
-<img  height="100px" width="200px" src="<c:out value="${movie.movieImage}"/>"/>
-</td>
-<td>
-<c:out value="${movie.genre}" />
-</td>
-<td>
-<c:out value="${movie.description}" />
-</td>
-<td>
-<c:out value="${movie.ageRating}" />
-</td>
-<td>
-<c:out value="${movie.trailer}" />
-</td>
-<!-- For each movie in the database, Edit/Delete
-buttons which invokes the edit/delete functions -->
-<td>
-<a href="edit?id=<c:out value='${movie.id}'
-/>">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="delete?id=<c:out
-value='${movie.id}' />">Delete</a>
-</td>
-</tr>
-</c:forEach>
-</tbody>
-</table>
+
+
+<div style="margin-top:30px; font-size: 20px;">
+	<c:forEach var="movie" items="${listMovies}">
+		<div style="display:flex; align-items:center; margin-bottom: 35px; ">
+			<img style="margin-right: 70px;"  height="175px" width="300px" src="<c:out value="${movie.movieImage}"/>"/>
+			<div class="movieCards">
+				<div class="cardTopDiv">		
+					<div class="cardLeftDiv">
+						<div>
+							<b>Movie Name: </b><c:out value="${movie.movieName}" />
+						</div>
+						
+						<div>
+							<b>Genre: </b><c:out value="${movie.genre}" />
+						</div>
+					</div>
+					
+					<div class="cardRightDiv">
+						<div>
+							<b>Age Rating: </b><c:out value="${movie.ageRating}" />
+						</div>
+						<div>
+							<b>Trailer: </b><a target="_blank" href="
+							<c:out value="${movie.trailer}"/>"><c:out value="${movie.trailer}"/></a>
+						</div>
+					</div>
+				</div>
+				
+				<div style="margin-bottom: 10px; width: 850px;">
+					<b>Description: </b><c:out value="${movie.description}" />
+				</div>
+				
+				<div class="cardBtmDiv">
+					<div>
+						<a href="edit?id=<c:out value='${movie.id}'
+						/>"><b>Edit</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					<div>
+						<a href="delete?id=<c:out
+						value='${movie.id}' />"><b>Delete</b></a>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</c:forEach>
+</div>
 </div>
 </div>
 </body>
