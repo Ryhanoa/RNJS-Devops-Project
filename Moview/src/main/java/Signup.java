@@ -87,10 +87,14 @@ public class Signup extends HttpServlet {
    	       		 
    			 //Step 7: check if the query had been successfully execute, return “You are successfully registered” via the response,
    	       		if (i > 0){
-   	       			PrintWriter writer = response.getWriter();
-   	       			writer.println("<h1>" + "You have successfully registered an account!" + "</h1>");
-   	       			writer.close();
-   	       			}
+   		   	       	PrintWriter writer = response.getWriter();  
+   		   	       	response.setContentType("text/html");  
+   		   	       	writer.println("<script type=\"text/javascript\">");  
+   		   	       	writer.println("alert('You have successfully registered an account!');"); 
+   		   	       	writer.println("location.replace('http://localhost:8080/Moview/Signin.jsp')");
+   		   	       	writer.println("</script>");
+   		   	       	writer.close();
+   	       		}
 		 }
 		 
 

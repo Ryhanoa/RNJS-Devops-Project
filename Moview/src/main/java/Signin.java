@@ -74,10 +74,14 @@ public class Signin extends HttpServlet {
 			 
 		 }
 		 else {
-			 	//Step 7: check if the username and password is not in database had been successfully execute, return “Wrong user or password” via the response,
-   	       		PrintWriter writer = response.getWriter();
-   	       		writer.println("<h1>" + "Wrong username or password, please try again" + "</h1>");
-   	       		writer.close();
+			 	//Step 7: check if the username and password is not in database had been successfully execute, return “Wrong user or password” via the response,   	       		
+	   	       	PrintWriter writer = response.getWriter();  
+	   	       	response.setContentType("text/html");  
+	   	       	writer.println("<script type=\"text/javascript\">");  
+	   	       	writer.println("alert('Wrong username or password, please try again');"); 
+	   	       	writer.println("location.replace('http://localhost:8080/Moview/Signin.jsp')");
+	   	       	writer.println("</script>");
+	   	       	writer.close();
 		 }
 		 
 
