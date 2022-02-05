@@ -12,16 +12,23 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<nav class="navbar navbar-expand-md navbar-light">
+<c:forEach var="accounts" items="${listUsers}">
+<nav class="navbar navbar-expand-md navbar-light">
 		<div>
 			<a class="navbar-brand"> Moview </a>
 		</div>
 		<ul class="navbar-nav">
+		<li><a
+				href="<%=request.getContextPath()%>/HomeServlet?username=<c:out value="${accounts.username}" />&password=
+				<c:out value="${accounts.password}" />"
+				class="nav-link">Movies</a></li>
 			<li>
 			<a href="<%=request.getContextPath()%>/Signin.jsp"
 				class="nav-link">Log Out</a></li>
 		</ul>
 	</nav>
+</c:forEach>
+
 	
 <hr>
 	<div class="row">

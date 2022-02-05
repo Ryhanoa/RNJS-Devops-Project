@@ -99,6 +99,10 @@ public class HomeServlet extends HttpServlet {
 			private void listHomeMovies(HttpServletRequest request, HttpServletResponse response)
 					throws SQLException, IOException, ServletException {
 				List<Movie> movies = new ArrayList<>();
+				String usernameCall = (String)request.getAttribute("username");
+				String passwordCall = (String)request.getAttribute("password");
+				String usernameGetParam = request.getParameter("username");
+				String passwordGetParam = request.getParameter("password");
 				try (Connection connection = getConnection();
 
 						// Step 5.1: Create a statement using connection object
@@ -121,8 +125,19 @@ public class HomeServlet extends HttpServlet {
 				}
 				// Step 5.4: Set the users list into the listUsers attribute to be pass to the
 				// movieManagement.jsp
-				request.setAttribute("listHomeMovies", movies);
-				request.getRequestDispatcher("/Home.jsp").forward(request, response);
-			}
+				if( usernameGetParam != null && passwordGetParam != null) {
+					request.setAttribute("username", usernameGetParam);
+					request.setAttribute("password", passwordGetParam);
+					request.setAttribute("listHomeMovies", movies);
+					request.getRequestDispatcher("/Home.jsp").forward(request, response);
 
+				}
+				else {
+					request.setAttribute("username", usernameCall);
+					request.setAttribute("password", passwordCall);
+					request.setAttribute("listHomeMovies", movies);
+					request.getRequestDispatcher("/Home.jsp").forward(request, response);
+				}
+			}
 }
+

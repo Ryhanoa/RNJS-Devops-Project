@@ -38,6 +38,22 @@
 	</style>
 </head>
 <body>
+
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div>
+			<a class="navbar-brand"> Moview </a>
+		</div>
+		<ul class="navbar-nav">
+			<li><a
+				href="<%=request.getContextPath()%>/AccountServlet/dashboard?username=<c:out value="${username}" />&password=
+				<c:out value="${password}" />"
+				class="nav-link">Account information</a></li>
+							<li>
+			<a href="<%=request.getContextPath()%>/Signin.jsp"
+				class="nav-link">Log Out</a></li>
+		</ul>
+	</nav>
+
 <div class="row">
 <div class="container">
 <h1 style="font-weight: 700;" class="text-center">All Movies</h1>
