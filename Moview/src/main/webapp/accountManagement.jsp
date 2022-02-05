@@ -10,27 +10,38 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+<style>
+	.topNavBar {
+		display: flex;
+		flex-direction: row;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 50px;
+		border-bottom: 1px black solid
+	}
+	
+	.navHeader {
+		font-size: 28px;
+		margin-left: 50px;
+		color: black;
+	}
+</style>
 </head>
 <body>
 <c:forEach var="accounts" items="${listUsers}">
-<nav class="navbar navbar-expand-md navbar-light">
-		<div>
-			<a class="navbar-brand"> Moview </a>
-		</div>
-		<ul class="navbar-nav">
-		<li><a
+	<div class="topNavBar">
+			<h2 style="cursor:default; font-weight: 700;">MOVIEW</h2>
+			<a
 				href="<%=request.getContextPath()%>/HomeServlet?username=<c:out value="${accounts.username}" />&password=
 				<c:out value="${accounts.password}" />"
-				class="nav-link">Movies</a></li>
-			<li>
+				class="navHeader">MOVIES</a>
 			<a href="<%=request.getContextPath()%>/Signin.jsp"
-				class="nav-link">Log Out</a></li>
-		</ul>
-	</nav>
+				class="navHeader">LOG OUT</a>
+	</div>
+	
 </c:forEach>
 
-	
-<hr>
 	<div class="row">
 		<div class="container">
 			<h3 class="text-center">Account Settings</h3>

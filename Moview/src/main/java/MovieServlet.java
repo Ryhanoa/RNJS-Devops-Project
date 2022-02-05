@@ -141,14 +141,14 @@ public class MovieServlet extends HttpServlet {
 		if( usernameGetParam != null && passwordGetParam != null) {
 			request.setAttribute("username", usernameGetParam);
 			request.setAttribute("password", passwordGetParam);
-			request.setAttribute("listHomeMovies", movies);
+			request.setAttribute("listMovies", movies);
 			request.getRequestDispatcher("/movieManagement.jsp").forward(request, response);
 
 		}
 		else {
 			request.setAttribute("username", usernameCall);
 			request.setAttribute("password", passwordCall);
-			request.setAttribute("listHomeMovies", movies);
+			request.setAttribute("listMovies", movies);
 			request.getRequestDispatcher("/movieManagement.jsp").forward(request, response);
 		}
 	}
