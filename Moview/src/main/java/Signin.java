@@ -69,7 +69,7 @@ public class Signin extends HttpServlet {
 		 
 		 if(rs.next()) {
 			 
-			 if (adminCode == "123") {
+			 if (adminCode.equals("123")) {
 				 request.setAttribute("username", username);
 				 request.setAttribute("password", password);
 				 RequestDispatcher rd = request.getRequestDispatcher("/MovieServlet/dashboard");
