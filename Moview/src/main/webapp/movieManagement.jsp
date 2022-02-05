@@ -108,11 +108,11 @@
 				
 				<div class="cardBtmDiv">
 					<div>
-						<a href="edit?id=<c:out value='${movie.id}'
+						<a href="/Moview/MovieServlet/edit?id=<c:out value='${movie.id}'
 						/>"><b>Edit</b></a> &nbsp;&nbsp;&nbsp;&nbsp;
 					</div>
 					<div>
-						<a href="delete?id=<c:out
+						<a href="/Moview/MovieServlet/delete?id=<c:out
 						value='${movie.id}' />"><b>Delete</b></a>
 					</div>
 				</div>
