@@ -66,6 +66,9 @@
 <a href="<%=request.getContextPath()%>/ReviewMovies" class="btn btn-success">Check out the movie reviews</a>
 </div>
 <hr>
+<div class="container text-left">
+<a href="<%=request.getContextPath()%>/ReviewMovies" class="btn btn-success">Check Out The Movie Reviews</a>
+<hr>
 <div style="margin-top:30px; font-size: 20px;">
 	<c:forEach var="movie" items="${listHomeMovies}">
 		<div style="display:flex; align-items:center; margin-bottom: 35px; ">
