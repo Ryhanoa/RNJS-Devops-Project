@@ -16,11 +16,7 @@ crossorigin="anonymous">
 <div class="container">
 <h3 class="text-center">List of Reviews</h3>
 <hr>
-<div class="container text-left">
 
-<a href="<%=request.getContextPath()%>/addReview.jsp" class="btn btn-success">Post a review</a>
-</div>
-<br>
 
 <table class="table">
 <thead>
