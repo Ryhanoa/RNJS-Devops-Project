@@ -50,6 +50,23 @@
 		color: black;
 	}
 	
+	.buttons {
+		width: 160px;
+		height: 30px;
+		border-radius: 10px; 
+		margin-bottom: 20px;
+		background-color: white;
+		border: 2px #080A6E solid;
+		color: #080A6E;
+		padding: 10px;
+	}
+	
+	.buttons:hover {
+		background-color: #080A6E;
+		color: white;
+		text-decoration: none;
+	}
+	
 	</style>
 </head>
 <body>
@@ -71,8 +88,8 @@
 <div class="container text-left">
 <!-- Add new movie button redirects to the addMovie.jsp page -->
 
-<a href="<%=request.getContextPath()%>/addMovie.jsp" class="btn btn-success">Add New Movie</a> 
-<a href="<%=request.getContextPath()%>/ReviewServlet/dashboard" class="btn btn-success" style = "position:relative; left:700px; top:1px">Manage Reviews</a>
+<a href="<%=request.getContextPath()%>/addMovie.jsp" class="buttons">Add New Movie</a> 
+<a href="<%=request.getContextPath()%>/ReviewServlet/dashboard" class="buttons" style = "position:relative; left:700px; top:1px">Manage Reviews</a>
 <hr>
 </div>
 

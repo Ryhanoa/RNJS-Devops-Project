@@ -30,10 +30,27 @@ crossorigin="anonymous">
 		background-color: #080A6E;
 		color: white;
 	}
+	
+	.buttons {
+		width: 160px;
+		height: 30px;
+		border-radius: 10px; 
+		margin-bottom: 20px;
+		background-color: white;
+		border: 2px #080A6E solid;
+		color: #080A6E;
+		padding: 10px;
+	}
+	
+	.buttons:hover {
+		background-color: #080A6E;
+		color: white;
+		text-decoration: none;
+	}
 </style>
 </head>
 <body>
-	<a href="<%=request.getContextPath()%>/MovieServlet/dashboard" class="btn btn-success" style = "position:relative; left:50px; top:40px" >Back to Dashboard</a>
+	<a href="<%=request.getContextPath()%>/MovieServlet/dashboard" class="buttons" style = "position:relative; left:50px; top:40px" >Back to Dashboard</a>
 	<div style="display:flex; flex-direction: column; align-items: center;">
 		<h1 style="font-weight: 700; margin-bottom: 50px;">Add Movies!</h1>
 		<div>
