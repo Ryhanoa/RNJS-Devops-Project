@@ -12,6 +12,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 crossorigin="anonymous">
 </head>
 <body>
+<a href="<%=request.getContextPath()%>/MovieServlet/dashboard"
+class="btn btn-success" style = "position:relative; left:50px; top:40px">Back to Movies</a>
 <div class="row">
 <div class="container">
 <h3 class="text-center">List of Movie Reviews</h3>
