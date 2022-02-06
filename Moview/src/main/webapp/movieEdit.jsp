@@ -11,11 +11,30 @@
 	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
 <title>Edit Movie</title>
+
+<style>
+	.buttons {
+		width: 160px;
+		height: 30px;
+		border-radius: 10px; 
+		margin-bottom: 20px;
+		background-color: white;
+		border: 2px #080A6E solid;
+		color: #080A6E;
+		padding: 10px;
+	}
+	
+	.buttons:hover {
+		background-color: #080A6E;
+		color: white;
+		text-decoration: none;
+	}
+</style>
 </head>
 <body>
 
 <a href="<%=request.getContextPath()%>/MovieServlet/dashboard"
-class="btn btn-success" style = "position:relative; left:50px; top:40px">Back to Dashboard</a>
+class="buttons" style = "position:relative; left:50px; top:40px">Back to Dashboard</a>
 
 
 <div class="container col-md-6">
