@@ -181,7 +181,7 @@ public class ReviewServlet extends HttpServlet {
 	
 	//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
 	
-	response.sendRedirect("http://localhost:8090/Moview/ReviewServlet/dashboard");
+	response.sendRedirect("http://localhost:8080/Moview/ReviewServlet/dashboard");
 	}
 	
 	//method to delete user
@@ -202,7 +202,7 @@ public class ReviewServlet extends HttpServlet {
 	
 	//Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 	
-	response.sendRedirect("http://localhost:8090/Moview/ReviewServlet/dashboard");
+	response.sendRedirect("http://localhost:8080/Moview/ReviewServlet/dashboard");
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
