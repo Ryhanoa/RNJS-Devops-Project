@@ -70,11 +70,15 @@
 <hr>
 <div class="container text-left">
 <!-- Add new movie button redirects to the addMovie.jsp page -->
+
 <a href="<%=request.getContextPath()%>/addMovie.jsp" class="btn btn-success">Add New Movie</a> 
 <a href="<%=request.getContextPath()%>/ReviewServlet/dashboard" class="btn btn-success" style = "position:relative; left:700px; top:1px">Manage Reviews</a>
 <hr>
 </div>
+<div class="container text-left">
 
+<a href="<%=request.getContextPath()%>/ReviewServlet/dashboard" class="btn btn-success">Manage The Reviews</a>
+</div>
 
 <div style="margin-top:30px; font-size: 20px;">
 	<c:forEach var="movie" items="${listMovies}">

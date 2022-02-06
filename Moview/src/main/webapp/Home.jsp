@@ -62,6 +62,9 @@
 <div class="row">
 <div class="container">
 <h1 style="font-weight:700; margin-top: 30px" class="text-center">All Movies</h1>
+<div class="container text-left">
+<a href="<%=request.getContextPath()%>/ReviewMovies" class="btn btn-success">Check out the movie reviews</a>
+</div>
 <hr>
 <div class="container text-left">
 <a href="<%=request.getContextPath()%>/ReviewMovies" class="btn btn-success">Check Out The Movie Reviews</a>
