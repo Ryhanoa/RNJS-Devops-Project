@@ -45,10 +45,9 @@ Add New Review
 <input type="hidden" name="oriId" value="<c:out
 value='${review.id}' />" />
 </c:if>
-
 <fieldset class="form-group">
 <label>Movie</label> <input type="text" value="<c:out
-value='${review.id}' />" class="form-control" name="movie">
+value='${review.movie}' />" class="form-control" name="movie">
 </fieldset>
 <fieldset class="form-group">
 <label>Rating</label> <input type="text" value="<c:out

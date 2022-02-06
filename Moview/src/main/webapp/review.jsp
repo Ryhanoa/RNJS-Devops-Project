@@ -15,12 +15,13 @@ crossorigin="anonymous">
 <body>
 <div class="row">
 <div class="container">
-<h3 class="text-center">List of Reviews</h3>
+<h3 class="text-center">List of Movie Reviews</h3>
 <hr>
 <div class="container text-left">
 
 <a href="<%=request.getContextPath()%>/addReview.jsp" class="btn btn-success">Post a New Movie Review</a>
 </div>
+
 <br>
 
 <table class="table">

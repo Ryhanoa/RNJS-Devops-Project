@@ -33,7 +33,7 @@ public class ReviewServlet extends HttpServlet {
 	
 	private static final String INSERT_REVIEW_SQL = "INSERT INTO Review" + " (movie, rating, feedback) VALUES " +
 	" (?, ?, ?);";
-	private static final String SELECT_REVIEW_BY_ID = "select rating,feedback from Review where id =?";
+	private static final String SELECT_REVIEW_BY_ID = "select * from Review where id =?";
 	private static final String SELECT_ALL_REVIEW = "select * from Review ";
 	private static final String DELETE_REVIEW_SQL = "delete from Review where id = ?;";
 	private static final String UPDATE_REVIEW_SQL = "update Review set movie = ?, rating = ?,feedback= ? where id = ?;";
@@ -181,7 +181,7 @@ public class ReviewServlet extends HttpServlet {
 	
 	//Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
 	
-	response.sendRedirect("http://localhost:8090/Moview/ReviewServlet/dashboard");
+	response.sendRedirect("http://localhost:8080/Moview/ReviewServlet/dashboard");
 	}
 	
 	//method to delete user
@@ -202,7 +202,7 @@ public class ReviewServlet extends HttpServlet {
 	
 	//Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
 	
-	response.sendRedirect("http://localhost:8090/Moview/ReviewServlet/dashboard");
+	response.sendRedirect("http://localhost:8080/Moview/ReviewServlet/dashboard");
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
